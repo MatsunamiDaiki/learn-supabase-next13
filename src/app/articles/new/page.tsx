@@ -12,20 +12,18 @@ const CreateArticle = () => {
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+    
     e.preventDefault();
     setLoading(true);
-    console.log(id, title, content)
-    await createArticle(id, title, content);
-    // const newArtilce = await fetch(`${API_URL}/api`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ id, title, content }),
-    // });
+    await fetch(`${API_URL}/api/create`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id, title, content }),
+    });
 
     setLoading(false);
     router.push("/");
