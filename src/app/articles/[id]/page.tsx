@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from "next/image";
-import { getDetailArticle } from '@/blogAPI';
 import DeleteButton from '@/app/components/DeleteButton';
 
 const Article = async ({ params }: {params: {id: string}}) => {
