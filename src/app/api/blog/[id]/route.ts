@@ -1,5 +1,4 @@
 import { supabase } from "@/utils/supabaseClient";
-import { NextApiRequest, NextApiResponse } from "next";
 import { notFound } from "next/navigation";
 import { NextResponse } from "next/server";
 
@@ -16,12 +15,11 @@ export async function GET(req: Request, res: Response) {
   if (!data) {
     notFound();
   }
-  console.log(NextResponse.json(data))
   return NextResponse.json(data);
 }
 
 export async function DELETE(req: Request, res: Response) {
-  const id = req.url?.split("/api/")[1];
+  const id = req.url?.split("/blog/")[1];
 
   const { error } = await supabase.from("posts").delete().eq("id", id);
 
