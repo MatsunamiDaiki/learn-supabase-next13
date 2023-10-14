@@ -1,7 +1,5 @@
 "use client";
 
-import { createArticle } from "@/blogAPI";
-// import { createArticle } from "@/pages/api/articles/articles";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
