@@ -8,7 +8,6 @@ type DeleteButtonProps = {
 };
 
 const DeleteButton = ({ id }: DeleteButtonProps) => {
-  console.log(id)
   const router = useRouter();
 
   const handleDelete = async () => {
